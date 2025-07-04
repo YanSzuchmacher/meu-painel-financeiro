@@ -109,7 +109,7 @@ News items should only contain 'title' and 'summary'.
       },
     });
 
-    let jsonStr = response.text.trim();
+    let jsonStr = (response.text ?? '').trim();
     const fenceRegex = /^```(?:json)?\s*\n?(.*?)\n?\s*```$/s;
     const match = jsonStr.match(fenceRegex);
     if (match && match[1]) {
@@ -203,7 +203,7 @@ News items should only contain 'title' and 'summary'. Do NOT include 'classifica
         temperature: 0.7,
       },
     });
-    let jsonStr = response.text.trim();
+    let jsonStr = (response.text ?? '').trim();
     const fenceRegex = /^```(?:json)?\s*\n?(.*?)\n?\s*```$/s;
     const match = jsonStr.match(fenceRegex);
     if (match && match[1]) {
@@ -278,7 +278,7 @@ Do NOT include a "trend" field.
       },
     });
 
-    let jsonStr = response.text.trim();
+    let jsonStr = (response.text ?? '').trim();
     const fenceRegex = /^```(?:json)?\s*\n?(.*?)\n?\s*```$/s;
     const match = jsonStr.match(fenceRegex);
     if (match && match[1]) {
